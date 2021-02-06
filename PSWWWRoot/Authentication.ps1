@@ -3,7 +3,7 @@
     $user = $PoSHUserName -split "\\"
     $userObj = Get-ADUser $user[1]
 
-    $group = "ExchangeTools-Access"
+    $group = "365HTK-Access"
     $members = Get-ADGroupMember -Identity $group -Recursive | Select -ExpandProperty SID
 
     If ($members -contains $userObj.SID) {

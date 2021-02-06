@@ -1,0 +1,6 @@
+<configuration>
+    <ExchangeOnline>
+        <Authentication clientCert="xxxx8F96xxxxxA73F53FAE5E686BF9E910xxxxx3A" appId="xxxxxxb7-1bf9-4xxd-bexx-4xxxxxxxxxx6" tenantName="xxx.onmicrosoft.com" />
+        <Addresses remoteRoutingAddress="xxx.mail.onmicrosoft.com" />
+    </ExchangeOnline>
+</configuration>

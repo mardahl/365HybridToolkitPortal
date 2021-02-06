@@ -1,7 +1,9 @@
 ﻿if(-not (Get-PSSession)) {
     Write-Verbose "Connecting to Exchange online" -Verbose
     try {
-        Connect-ExchangeOnline -CertificateThumbprint "FE58F963AAA1A73F53FAE5E686BF9E910D39393A" -AppId "55a993b7-1bf9-460d-bec9-46f8a2312f76" -Organization "lemu.onmicrosoft.com" -ShowBanner:$false -Prefix "EOL"
+        [xml]$config = Get-Content "$HomeDirectory\config.xml"
+        $exAuth = $config.configuration.ExchangeOnline.Authentication
+        Connect-ExchangeOnline -CertificateThumbprint $exAuth.clientCert -AppId $exAuth.appId -Organization $exAuth.tenantName -ShowBanner:$false -Prefix "EOL"
     } catch {
         $Error
         exit 1

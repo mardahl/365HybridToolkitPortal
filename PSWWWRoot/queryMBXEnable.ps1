@@ -23,7 +23,12 @@ $upn = [uri]::UnescapeDataString($PoSHQuery.UPN)
 $group = [uri]::UnescapeDataString($PoSHQuery.Group)
 $alias = $($upn -split "@")[0]
 try {
-    $enable = Enable-RemoteMailbox -Identity $upn -Alias $alias -RemoteRoutingAddress "$($alias)@lemu.mail.onmicrosoft.com" -ErrorAction Stop
+
+    #fetch config
+    [xml]$config = Get-Content "$HomeDirectory\config.xml"
+    $exAddr = $config.configuration.ExchangeOnline.Addresses
+
+    $enable = Enable-RemoteMailbox -Identity $upn -Alias $alias -RemoteRoutingAddress "$($alias)@$($exAddr.remoteRoutingAddress)" -ErrorAction Stop
     $licGroup = Get-ADGroup $group | select -First 1
     $licGroup | Add-ADGroupMember -Members $alias -ErrorAction SilentlyContinue
     start-sleep -Seconds 10
