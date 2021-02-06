@@ -4,6 +4,7 @@ A web based interface to managing your Microsoft 365 Hybrid environment
 Dirty check list:
 - Made to be installed on a server with Exchange Online Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
+- Create folder PSWWWLogs
 - Create a service account to run the PoSH web server
 - install PoSH server
 - Create selfsigned cert for the service account running the PoSh server (because the service account must have access to cert store).
