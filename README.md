@@ -1,5 +1,6 @@
 # 365HybridToolkitPortal
-A web based interface to managing your Microsoft 365 Hybrid environment
+A web based interface to managing your Microsoft 365 Hybrid environment [BETA]
+(This is a work in progress, please feel free to contribute via pull requests)
 
 Current features:
 - Start AADSync from webinterface
