@@ -7,6 +7,9 @@ Current features:
 - Create new Exchange Online User without having to create migration batch.
   - Script will sync the Exchange Guid in reverse to enable off-boarding from EXO
 
+![demo of new user provisioning](https://github.com/mardahl/365HybridToolkitPortal/blob/4f174b8f8689e1053d2366b3d21e048a1a1ce0e9/newuser.gif "New User Provisioning")
+
+
 Quick and Dirty setup check list:
 - Made to be installed on a server with Exchange Online Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
