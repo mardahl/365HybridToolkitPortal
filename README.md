@@ -1,7 +1,7 @@
 # 365HybridToolkitPortal
 A web based interface to managing your Microsoft 365 Hybrid environment
 
-Dirty check list:
+Quick and Dirty check list:
 - Made to be installed on a server with Exchange Online Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
 - Create a service account to run the PoSH web server (exchange admin)
