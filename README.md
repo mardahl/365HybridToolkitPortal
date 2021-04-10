@@ -3,9 +3,9 @@ A web based interface to managing your Microsoft 365 Hybrid environment
 
 Current features:
 - Start AADSync from webinterface
-- - Allows users with access to the portal to start a sync, without having access to the actual sync server.
+ - Allows users with access to the portal to start a sync, without having access to the actual sync server.
 - Create new Exchange Online User without having to create migration batch.
-- - Script will sync the Exchange Guid in reverse to enable off-boarding from EXO
+ - Script will sync the Exchange Guid in reverse to enable off-boarding from EXO
 
 Quick and Dirty setup check list:
 - Made to be installed on a server with Exchange Online Management Tools installed (uses the powershell modules)
