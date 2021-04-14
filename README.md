@@ -18,6 +18,8 @@ Quick and Dirty setup check list:
   - Member of Exchange Admins
   - Member of Remote management users and AADSync admins on the sync server
 - install PoSH server
+  - Enable Windows Auth in C:\Program Files\PoSHServer\modules\PoSHServer\modules\config.ps1
+  - Documentation here: http://www.poshserver.net/files/PoSHServer.Documentation.pdf
 - Create selfsigned cert for the service account running the PoSh server (the service account must have access to cert store) - get the tumbprint for the config xml.
 - Create app registration in Azure AD - use the self signed certificate for access, and give Exchange.ManageAsApp permission.
 - Add required details to the config xml in PSWWWRoot
