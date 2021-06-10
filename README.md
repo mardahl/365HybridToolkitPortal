@@ -14,6 +14,9 @@ Current features:
 Quick and Dirty setup check list:
 - Made to be installed on a server with Exchange Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
+- Install these modules in PS (5.1 minimum)
+  - install-module az
+  - install-module exchangeonlinemanagement 
 - Create a service account to run the PoSH web server
   - Member of Organization Management security group (AD DS)
   - Member of Remote management users, ADSyncBrowse and ADSyncOperators local groups on the on-prem sync server
