@@ -6,7 +6,7 @@ Try {
     Start-PoSHServer -Hostname $hostname -Port 8080 –HomeDirectory “C:\365HTK\PSWWWRoot” –LogDirectory “C:\365HTK\PSWWWLogs” -ErrorAction Stop
     ###SSL version:
     #$hostname= "host.domain.tld"
-    #Start-PoSHServer -Hostname $hostname -Port 8080 –SSL –SSLIP "10.x.x.x" -SSLName "host.domain.tld" –SSLPort 4443 –HomeDirectory “C:\365HTK\PSWWWRoot” –LogDirectory “C:\365HTK\PSWWWLogs” -ErrorAction Stop
+    #Start-PoSHServer -Hostname $hostname -Port 8080 –SSL –SSLIP "10.x.x.x" -SSLName "Certificate Friendly Name" –SSLPort 4443 –HomeDirectory “C:\365HTK\PSWWWRoot” –LogDirectory “C:\365HTK\PSWWWLogs” -ErrorAction Stop
 } catch {
     Write-Verbose "Server initialization failed! ending transcript." -Verbose
     Write-Host $_
