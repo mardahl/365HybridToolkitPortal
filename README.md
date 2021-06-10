@@ -30,6 +30,7 @@ Quick and Dirty setup check list:
   - the service account must have access to cert store)
   - get the tumbprint for the config xml.
 - Add required details to the config xml in PSWWWRoot
+- Modify the queries for license groups in queryLicGrous.ps1 - the script uses group based licensing to assign licenses
 - Create a scheduled task to run the start webserver script as the service account when computer starts.
 - edit start web server script as you see fit.
 - start the scheduled task and access the local web server on port 8080 to use the portal.
