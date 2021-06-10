@@ -15,7 +15,6 @@ Quick and Dirty setup check list:
 - Made to be installed on a server with Exchange Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
 - Create a service account to run the PoSH web server
-  - Assigned Exchange Admins Role (Azure AD)
   - Member of Organization Management security group (AD DS)
   - Member of Remote management users and AADSync admins on the on-prem sync server
 - install PoSH server
