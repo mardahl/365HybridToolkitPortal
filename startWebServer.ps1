@@ -1,16 +1,5 @@
 #Requires -RunAsAdministrator
 Stop-Transcript
-Start-Transcript -Path "C:\365HTK\startWebServer_lastStart_log.txt" -Force 
-Try {
-
-} catch {
-    Exit 1
-} Finally {
-    Stop-Transcript
-}
-
-#Requires -RunAsAdministrator
-Stop-Transcript
 Start-Transcript -Path "C:\Scripts\startWebServer_lastStart_log.txt" -Force 
 Try {
     $hostname= "$($env:COMPUTERNAME).$($env:USERDNSDOMAIN)"
