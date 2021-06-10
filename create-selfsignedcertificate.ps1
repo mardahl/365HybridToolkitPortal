@@ -1,7 +1,8 @@
 ﻿<#
     Script to create self-signed 10 year valid cert and upload to App registration Modified version of MS script by @michael_mardahl
 #>
-
+#Requires -Module Az.Accounts
+#Requires -RunAsAdministrator
 
 $AppClientID = "55xxxxb7-1xx9-4x0d-bex9-x6f8xxxxx76" # App Id from Azure AD that needs certificate auth
 $PfxCertPath = 'C:\365HTK\AppAuth.pfx' #Place to store temporary cert file
@@ -10,9 +11,12 @@ $certificateName = 'AZAppCert' #A certificate name you choose
 $ErrorActionPreference = 'Stop'
 
 try {
-    Get-AzSubscription -ErrorAction stop
+    Get-AzSubscription -ErrorAction stop | out-null
 } catch {
     Connect-AzAccount
+    if (-not (Get-AzSubscription)) {
+        exit 1
+    }
 }
  
 try {
