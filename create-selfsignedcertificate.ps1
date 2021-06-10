@@ -1,5 +1,5 @@
 ﻿<#
-    Script to create self-signed 10 year valid cert and upload to App registration
+    Script to create self-signed 10 year valid cert and upload to App registration Modified version of MS script by @michael_mardahl
 #>
 
 
@@ -9,13 +9,10 @@ $CertificatePassword = $(get-date -Format ddMMMyyyy) #A password you choose to s
 $certificateName = 'AZAppCert' #A certificate name you choose
 $ErrorActionPreference = 'Stop'
 
-if (-not (Get-AzSubscription)){
 try {
-Connect-AzAccount
+    Get-AzSubscription -ErrorAction stop
 } catch {
-    $_
-    exit 1
-}
+    Connect-AzAccount
 }
  
 try {
