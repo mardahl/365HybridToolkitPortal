@@ -1,5 +1,6 @@
 ﻿<#
-    Script to create self-signed 10 year valid cert and upload to App registration Modified version of MS script by @michael_mardahl
+    Script to create self-signed 10 year valid cert and upload to App registration 
+    Modified version of MS script by @michael_mardahl
 #>
 #Requires -Module Az.Accounts
 #Requires -RunAsAdministrator
