@@ -4,6 +4,6 @@
         <Addresses remoteRoutingAddress="xxx.mail.onmicrosoft.com" />
     </ExchangeOnline>
     <AzureADConnect>
-        <Server hostname="adsync01.domain.local" />
+        <hostname>adsync01.domain.local</hostname>
     </AzureADConnect>
 </configuration>
