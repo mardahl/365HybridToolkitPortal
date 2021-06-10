@@ -11,15 +11,25 @@ exit 0
 #execute section
 
     try {
-        #Get ADSync server name
-        $MSOLusers = Get-ADUser -Filter {Name -like "msol_*"} -Properties * -ErrorAction Stop
-        $currentMSOLdate = (Get-Date).AddYears(-10)
-        foreach ($user in $MSOLusers) {
-            if($currentMSOLdate -lt $user.whenChanged) {
-                $currentMSOLdate = $user.whenChanged
-                $syncServername = $user.Description -match "(?<=computer\s).*(?=\sconfigured)"
-                $syncServername = $Matches[0]
+        #Fetch servername from config
+            [xml]$config = Get-Content "$HomeDirectory\config.xml"
+            [string[]]$aadSyncServer = $config.configuration.AzureADConnect.hostname
+
+
+        if($aadSyncServer -eq "") {
+
+            #Get ADSync server name automatically from MSOL account
+            $MSOLusers = Get-ADUser -Filter {Name -like "msol_*"} -Properties * -ErrorAction Stop
+            $currentMSOLdate = (Get-Date).AddYears(-10)
+            foreach ($user in $MSOLusers) {
+                if($currentMSOLdate -lt $user.whenChanged) {
+                    $currentMSOLdate = $user.whenChanged
+                    $syncServername = $user.Description -match "(?<=computer\s).*(?=\sconfigured)"
+                    $syncServername = $Matches[0]
+                }
             }
+        } else {
+            $syncServername = $aadSyncServer
         }
     } catch {
         $result = "failed"
