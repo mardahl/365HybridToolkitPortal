@@ -12,7 +12,7 @@ Current features:
 
 
 Quick and Dirty setup check list:
-- Made to be installed on a server with Exchange Online Management Tools installed (uses the powershell modules)
+- Made to be installed on a server with Exchange Management Tools installed (uses the powershell modules)
 - place code in c:\365HTK\
 - Create a service account to run the PoSH web server
   - Member of Exchange Admins
