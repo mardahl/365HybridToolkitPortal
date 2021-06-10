@@ -20,8 +20,11 @@ Quick and Dirty setup check list:
 - install PoSH server
   - Enable Windows Auth in C:\Program Files\PoSHServer\modules\PoSHServer\modules\config.ps1
   - Documentation here: http://www.poshserver.net/files/PoSHServer.Documentation.pdf
-- Create selfsigned cert for the service account running the PoSh server (the service account must have access to cert store) - get the tumbprint for the config xml.
-- Create app registration in Azure AD - use the self signed certificate for access, and give Exchange.ManageAsApp permission.
+- Create app registration in Azure AD - and give it the application permission "Exchange.ManageAsApp".
+- Create selfsigned cert for the service account running the PoSh server
+  - Modify the script to use the app (Client) ID that you just created.
+  - the service account must have access to cert store)
+  - get the tumbprint for the config xml.
 - Add required details to the config xml in PSWWWRoot
 - Create a scheduled task to run the start webserver script as the service account when computer starts.
 - edit start web server script as you see fit.
