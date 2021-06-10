@@ -16,7 +16,7 @@ Quick and Dirty setup check list:
 - place code in c:\365HTK\
 - Create a service account to run the PoSH web server
   - Member of Organization Management security group (AD DS)
-  - Member of Remote management users and AADSync admins on the on-prem sync server
+  - Member of Remote management users, ADSyncBrowse and ADSyncOperators local groups on the on-prem sync server
 - install PoSH server
   - Enable Windows Auth in C:\Program Files\PoSHServer\modules\PoSHServer\modules\config.ps1
   - Documentation here: http://www.poshserver.net/files/PoSHServer.Documentation.pdf
