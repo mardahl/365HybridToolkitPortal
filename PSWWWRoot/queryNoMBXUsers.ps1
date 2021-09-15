@@ -19,6 +19,20 @@ if($Filter -like "false"){
     $users = Get-User -Filter {(whenCreated -gt $months) -and (RecipientType -EQ "User") -and (Department -NE $null)} -WarningAction SilentlyContinue | Select Name, UserPrincipalName | Sort Name
 }
 
+$filler1 = [PSCustomObject]@{
+    'Name' = 'EOF'
+    'UserPrincipalName' = 'No more valid users found'
+}
+$filler2 = [PSCustomObject]@{
+    'Name' = 'TIP'
+    'UserPrincipalName' = 'You can disable the filter below, to show aditional users.'
+}
+
+$combined = @()
+$combined += $users
+$combined += $filler1
+$combined += $filler2
+
 @"
-$($users | ConvertTo-Json)
+$($combined  | ConvertTo-Json)
 "@
